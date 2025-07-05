@@ -123,32 +123,39 @@ table th, table td {
   cursor: pointer;
 }
 
-.input-name div, form input, form textarea{
+form input{
     width: 100%;
 }
 
-#first-name {
-    margin-right: 5px;
-}
-
-#last-name {
-    margin-left: 5px;
-}
-
-.input-name div p {
-    font-size: small;
-    color: gray;
-}
-
-form input, form textarea {
+form input {
     border-radius: 10px;
     border: 1px solid;
     padding-left: 10px;
+    height: 30px;
 }
 
-form > p {
+form p {
     font-weight: bold;
     font-size: large;
+}
+
+input[type="submit"] {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid;
+    width: 100px;
+    height: 50px;
+    margin: 0px auto;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #c0c0c0;
+    transition: 0.25s linear;
+}
+
+form div {
+    margin: 20px;
 }
 
 #footer {
