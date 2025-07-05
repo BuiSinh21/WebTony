@@ -104,9 +104,9 @@ table th, table td {
 .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #888;
-  width: 60%;
+  width: 25%;
 }
 
 .close {
@@ -121,4 +121,35 @@ table th, table td {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.input-name div, form input, form textarea{
+    width: 100%;
+}
+
+#first-name {
+    margin-right: 5px;
+}
+
+#last-name {
+    margin-left: 5px;
+}
+
+.input-name div p {
+    font-size: small;
+    color: gray;
+}
+
+form input, form textarea {
+    border-radius: 10px;
+    border: 1px solid;
+    padding-left: 10px;
+}
+
+form > p {
+    font-weight: bold;
+}
+
+footer p {
+    color: white
 }
