@@ -148,8 +148,23 @@ form input, form textarea {
 
 form > p {
     font-weight: bold;
+    font-size: large;
 }
 
-footer p {
-    color: white
+#footer {
+    background-color: black; height: 300px; display: flex; align-items: center; justify-content: center;
+}
+
+#footer p, #footer i {
+    color: white;
+    margin: 10px;
+}
+
+#footer div {
+    margin: 0px 100px;
+}
+
+#footer div p:first-of-type {
+    font-weight: bold;
+    font-size: x-large;
 }
