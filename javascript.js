@@ -1,3 +1,6 @@
+import { irregularVerbs } from "./arrayVerb.js";
+console.log(irregularVerbs)
+
 const arr1 = [
     {
         col1: "Động từ tận cùng bằng 2 nguyên âm + 1 phụ âm hoặc tận cùng bằng 2 phụ âm thì thêm “ed”",
@@ -49,8 +52,6 @@ for (var i = 0; i < arr1.length; i++) {
 
 
 
-
-
 const arr2 = [
   {
     col1: "Động từ có V1 tận cùng là “eed” thì V2, V3 là “ed”",
@@ -94,14 +95,6 @@ for (var i = 0; i < arr2.length; i++) {
 
 
 
-
-
-
-
-
-
-
-
 var modal = document.getElementById("myModal");
 
 var btn = document.getElementById("myBtn");
@@ -121,3 +114,40 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+var v1 = document.getElementById("v1");
+var v2 = document.getElementById("v2");
+var v3 = document.getElementById("v3");
+var form_verb = document.getElementById("verb");
+
+function checkArray(vBase, vPast, vParticiple) {
+ const data = irregularVerbs.find(
+    (element) =>
+      vBase == element.base.toString().toLowerCase() &&
+      vPast == element.v2.toString().toLowerCase() &&
+      vParticiple == element.v3.toString().toLowerCase()
+  );
+  if(data)
+  {
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+function checkVerb() {
+  const vBase = v1.value.toString().toLowerCase();
+  const vPast = v2.value.toString().toLowerCase();
+  const vParticiple = v3.value.toString().toLowerCase();
+  const check = checkArray(vBase, vPast, vParticiple);
+  if (check == true) {
+    alert("Bạn đã đúng");
+  } else {
+    console.log("Bạn đã sai ");
+  }
+}
+form_verb.addEventListener("submit", function (event) {
+  event.preventDefault();
+  checkVerb();
+});
