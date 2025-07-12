@@ -130,18 +130,26 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 style="text-align: center;">Check your knowledge</h2>
-            <form id="verb">
+            <form id="form_verb">
                 <div>
                     <p>Infinitive</p>
-                    <input id="v1">
+                    <input id="base">
                 </div>
                 <div>
                     <p>Simple Past</p>
-                    <input id="v2">
+                    <input id="past">
                 </div>
                 <div>
                     <p>Past Participle</p>
-                    <input id="v3">
+                    <input id="participle">
+                </div>
+                <div id="check_correct">
+                    <i class="fa-solid fa-check" style="color: #00ff40;"></i>
+                    <span style="color: #00ff40;">Correct</span>
+                </div>
+                <div id="check_incorrect">
+                    <i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+                    <span style="color: #ff0000;">Incorrect</span>
                 </div>
                 <div style="display: flex; align-items: center;">
                     <input type="submit" value="Check">

@@ -115,18 +115,20 @@ window.onclick = function(event) {
   }
 }
 
-var v1 = document.getElementById("v1");
-var v2 = document.getElementById("v2");
-var v3 = document.getElementById("v3");
-var form_verb = document.getElementById("verb");
+var form_verb = document.getElementById("form_verb");
+var base = document.getElementById("base");
+var past = document.getElementById("past");
+var participle = document.getElementById("participle");
+var check_correct = document.getElementById("check_correct");
+var check_incorrect = document.getElementById("check_incorrect");
 
 function checkArray(vBase, vPast, vParticiple) {
  const data = irregularVerbs.find(
     (element) =>
-      vBase == element.base.toString().toLowerCase() &&
-      vPast == element.v2.toString().toLowerCase() &&
-      vParticiple == element.v3.toString().toLowerCase()
-  );
+      vBase == element.base.toString().trim().toLowerCase() &&
+      vPast == element.past.toString().trim().toLowerCase() &&
+      vParticiple == element.participle.toString().trim().toLowerCase()
+  )
   if(data)
   {
     return true;
@@ -137,16 +139,19 @@ function checkArray(vBase, vPast, vParticiple) {
 }
 
 function checkVerb() {
-  const vBase = v1.value.toString().toLowerCase();
-  const vPast = v2.value.toString().toLowerCase();
-  const vParticiple = v3.value.toString().toLowerCase();
+  const vBase = base.value.toString().trim().toLowerCase();
+  const vPast = past.value.toString().trim().toLowerCase();
+  const vParticiple = participle.value.toString().trim().toLowerCase();
   const check = checkArray(vBase, vPast, vParticiple);
+  check_correct.style.display = "none";
+  check_incorrect.style.display = "none";
   if (check == true) {
-    alert("Bạn đã đúng");
+    check_correct.style.display = "block";
   } else {
-    console.log("Bạn đã sai ");
+    check_incorrect.style.display = "block";
   }
 }
+
 form_verb.addEventListener("submit", function (event) {
   event.preventDefault();
   checkVerb();

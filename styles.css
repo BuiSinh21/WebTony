@@ -174,3 +174,7 @@ form div {
     font-weight: bold;
     font-size: x-large;
 }
+
+#check_correct, #check_incorrect {
+    display: none;
+}
