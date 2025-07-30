@@ -3,16 +3,6 @@ from flask_restful import Resource
 from app.vocabulary import vocabs, used_vocabs
 import random
 
-class home(Resource):
-    def post(self):
-        return jsonify({"message": "Hello Word"})
-    def get(self):
-        return {"message": "Viewed successfully"}
-    def put(self):
-        return jsonify({"message": "Edited successfully"})
-    def delete(self):
-        return jsonify({"message": "Goodbye Word"})
-
 class get_vocabulary(Resource):
     def get(self):
         return jsonify({"message": vocabs})
